@@ -1,0 +1,9 @@
+Agents Assemble: The Healthcare AI Endgame Challenge
+Build Interoperable Healthcare Agents at the Intersection of MCP, A2A, and FHIR.
+
+We have all watched the AI in healthcare trailers - the hype, the theories, and the cool demos. But now, we have entered the Endgame. At Prompt Opinion, we define this phase as "The Last Mile" - the critical gap where raw intelligence must be converted into actionable deliverables. To conquer this mile, we cannot work alone. We are proud to launch Agents Assemble, a builder’s competition designed to prove that the power of AI lies in collaboration.
+
+Our platform provides the headquarters for this mission, giving you native access to the industry's best tools to build in two distinct ways: you can forge a Superpower (building the MCP tools that fuel the ecosystem), or you can rise up to build a Full Agent (equipping those superpowers to tackle a specific healthcare challenge).
+
+The technology is ready. The platform is open. It’s time to assemble.
+ 
