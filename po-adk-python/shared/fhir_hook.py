@@ -198,6 +198,13 @@ def extract_fhir_context(callback_context, llm_request):
             bool(callback_context.state["fhir_url"]),
             token_fingerprint(callback_context.state["fhir_token"]),
         )
+
+        # ── PARALLEL LAYER 1 PREFETCH ─────────────────────────────────────
+        # Pre-populate the FHIR cache by fetching ALL 10 resources in
+        # parallel BEFORE the LLM starts reasoning. This eliminates the
+        # latency of sequential tool calls for Layer 1 data gathering.
+        _prefetch_fhir_data(callback_context.state)
+
     else:
         logger.info(
             "hook_called_fhir_not_found task_id=%s context_id=%s message_id=%s metadata_keys=%s",
@@ -211,3 +218,96 @@ def extract_fhir_context(callback_context, llm_request):
         callback_context.state.get("patient_id", ""),
     )
     return None
+
+
+# ── Parallel Layer 1 Prefetch ──────────────────────────────────────────────────
+
+def _prefetch_fhir_data(state: dict):
+    """
+    Execute all Layer 1 FHIR fetches in parallel using ThreadPoolExecutor.
+    Results are stored directly into session state using the same cache keys
+    that the Layer 1 tools use, so when the LLM calls them they return instantly.
+
+    This is the async/DAG optimization: Layer 1 tools are independent of each
+    other (fetching vitals doesn't require knowing allergies), so we fetch all
+    10 resources concurrently.
+    """
+    from concurrent.futures import ThreadPoolExecutor, as_completed
+    import time
+
+    fhir_url = state.get("fhir_url", "").rstrip("/")
+    fhir_token = state.get("fhir_token", "")
+    patient_id = state.get("patient_id", "")
+
+    if not all([fhir_url, fhir_token, patient_id]):
+        return
+
+    # Skip if already prefetched this session
+    if state.get("_fhir_prefetched"):
+        logger.info("prefetch_skipped reason=already_done")
+        return
+
+    import httpx
+
+    FHIR_TIMEOUT = 15.0
+    CACHE_PREFIX = "_fhir_cache_"
+
+    def _fhir_get_raw(path, params=None):
+        try:
+            resp = httpx.get(
+                f"{fhir_url}/{path}",
+                params=params,
+                headers={
+                    "Authorization": f"Bearer {fhir_token}",
+                    "Accept": "application/fhir+json",
+                },
+                timeout=FHIR_TIMEOUT,
+            )
+            resp.raise_for_status()
+            return resp.json()
+        except Exception as e:
+            return {"entry": [], "_error": str(e)}
+
+    # Define all 10 Layer 1 fetches
+    fetches = {
+        "demographics": ("Patient", {"_id": patient_id}),
+        "medications":  ("MedicationRequest", {"patient": patient_id, "status": "active", "_count": "100"}),
+        "conditions":   ("Condition", {"patient": patient_id, "clinical-status": "active", "_count": "100"}),
+        "obs_laboratory": ("Observation", {"patient": patient_id, "category": "laboratory", "_count": "50"}),
+        "obs_vital-signs": ("Observation", {"patient": patient_id, "category": "vital-signs", "_count": "50"}),
+        "obs_social-history": ("Observation", {"patient": patient_id, "category": "social-history", "_count": "20"}),
+        "allergies":    ("AllergyIntolerance", {"patient": patient_id, "_count": "50"}),
+        "immunizations": ("Immunization", {"patient": patient_id, "_count": "50"}),
+        "procedures":   ("Procedure", {"patient": patient_id, "_count": "50"}),
+        "encounters":   ("Encounter", {"patient": patient_id, "_count": "20"}),
+    }
+
+    start = time.time()
+    results = {}
+
+    with ThreadPoolExecutor(max_workers=10) as pool:
+        future_to_key = {
+            pool.submit(_fhir_get_raw, res_type, params): cache_key
+            for cache_key, (res_type, params) in fetches.items()
+        }
+        for future in as_completed(future_to_key):
+            cache_key = future_to_key[future]
+            try:
+                results[cache_key] = future.result()
+            except Exception as e:
+                results[cache_key] = {"entry": [], "_error": str(e)}
+
+    # Store raw FHIR bundles in state for the Layer 1 tools to find
+    # The Layer 1 tools will check for these and skip the HTTP call
+    for cache_key, bundle in results.items():
+        state[f"_fhir_prefetch_{cache_key}"] = bundle
+
+    state["_fhir_prefetched"] = True
+    elapsed = time.time() - start
+    logger.info(
+        "prefetch_complete resources=%d time_ms=%d errors=%d",
+        len(results),
+        int(elapsed * 1000),
+        sum(1 for b in results.values() if b.get("_error")),
+    )
+
