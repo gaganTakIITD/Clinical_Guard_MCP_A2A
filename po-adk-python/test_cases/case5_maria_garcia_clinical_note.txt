@@ -1,0 +1,72 @@
+Chief Complaint
+Follow-up for diabetes management. Patient reports increased thirst and frequent urination.
+
+History of Present Illness
+Maria Garcia is a 58-year-old female presenting for diabetes follow-up. She was diagnosed with Type 2 diabetes mellitus 8 years ago and has struggled with glycemic control. She reports increased thirst (polydipsia) and frequent urination (polyuria) over the past 2 months, suggesting worsening hyperglycemia. She has been adherent to her medications but admits to dietary non-compliance during recent family celebrations. She also has a history of hypertension, currently on two antihypertensives.
+
+Past Medical History
+- Type 2 diabetes mellitus (diagnosed 2016)
+- Hypertensive disorder (diagnosed 2012)
+- No known cardiovascular disease
+- No known kidney disease (but early signs emerging — see labs)
+
+Current Medications
+1. Metformin 1000 MG Oral Tablet — Twice daily (biguanide, diabetes)
+2. Glipizide 10 MG Oral Tablet — Once daily (sulfonylurea, diabetes)
+3. Lisinopril 20 MG Oral Tablet — Once daily (ACE inhibitor, hypertension)
+4. Amlodipine 5 MG Oral Tablet — Once daily (calcium channel blocker, hypertension)
+
+HEDIS QUALITY GAPS IDENTIFIED:
+- NO STATIN prescribed — ADA/HEDIS guidelines recommend statin therapy for diabetic patients aged 40-75
+- HbA1c above target — requires treatment intensification
+- Blood pressure above target — not at 140/90 goal despite two antihypertensives
+- Early nephropathy detected — microalbumin/creatinine ratio elevated
+
+Allergies
+No known allergies.
+
+Social History
+Non-smoker. No alcohol use. Homemaker. Lives with husband and two adult children. Hispanic ethnicity. Primary language: English/Spanish bilingual.
+
+Family History
+Mother: Type 2 diabetes (diagnosed age 50), died age 72 of MI
+Father: Hypertension, alive age 82
+Sister: Type 2 diabetes (diagnosed age 45)
+Strong family history of metabolic syndrome.
+
+Vital Signs (2025-04-20)
+- Blood Pressure: 148/94 mmHg (ABOVE TARGET — goal <140/90 for diabetics)
+- Heart Rate: 82 /min
+- Respiratory Rate: 16 /min
+
+Laboratory Results (2025-04-20)
+- Hemoglobin A1c: 9.1% (UNCONTROLLED — target <7.0%, ideally <6.5%)
+- Creatinine: 1.1 mg/dL (borderline)
+- eGFR: 68 mL/min/1.73m2 (CKD Stage 2 — mildly decreased)
+- Microalbumin/Creatinine Ratio: 45 mg/g (ELEVATED — normal <30, indicating early diabetic nephropathy)
+
+Assessment and Plan
+1. Diabetes — UNCONTROLLED. HbA1c 9.1% is significantly above 7% target.
+   - Consider adding a third agent: SGLT2 inhibitor (empagliflozin) or GLP-1 RA (semaglutide)
+   - SGLT2i preferred given emerging nephropathy (renal protective)
+   - Reinforce dietary counseling and carb counting
+   - Recheck HbA1c in 3 months
+
+2. HEDIS Gap: No statin — ADA recommends moderate-intensity statin for ALL diabetic patients 40-75.
+   - Start atorvastatin 20mg daily
+   - Check lipid panel at next visit
+
+3. Hypertension — BP 148/94, above 140/90 target for diabetics.
+   - Titrate lisinopril to 40mg OR add chlorthalidone 12.5mg
+   - Home BP monitoring recommended
+
+4. Early diabetic nephropathy — Microalbumin 45 mg/g (above 30 threshold).
+   - ACE inhibitor (lisinopril) is appropriate first-line renoprotective agent
+   - Consider adding SGLT2i for additional renoprotection
+   - Monitor eGFR and UACR every 6 months
+   - Referral to nephrology if eGFR drops below 45
+
+5. Preventive care gaps:
+   - Eye exam: Due for annual diabetic retinopathy screening
+   - Foot exam: Due for annual comprehensive foot exam
+   - Influenza vaccine: Due for annual flu shot

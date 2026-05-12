@@ -1,0 +1,45 @@
+Chief Complaint
+Annual physical examination.
+
+History of Present Illness
+James Park is a 35-year-old male presenting for routine annual physical. He reports no complaints. He takes cetirizine for seasonal allergies. He exercises regularly (running 3x/week), eats a balanced diet, and has no significant past medical history. No family history of early cardiovascular disease or cancer.
+
+Past Medical History
+- Seasonal allergic rhinitis (diagnosed 2018)
+- No chronic conditions
+- No surgeries
+- No hospitalizations
+
+Current Medications
+1. Cetirizine 10 MG Oral Tablet — Once daily as needed (antihistamine for seasonal allergies)
+
+Allergies
+No known drug allergies.
+No known food allergies.
+
+Social History
+Non-smoker. Occasional alcohol (2-3 drinks/week socially). Software engineer. Exercises regularly. No recreational drug use. Married, no children. No occupational exposures.
+
+Family History
+Father: alive, age 62, hypertension (controlled)
+Mother: alive, age 59, healthy
+No family history of diabetes, heart disease, cancer, or autoimmune conditions.
+
+Vital Signs (2025-04-20)
+- Blood Pressure: 120/78 mmHg (NORMAL)
+- Heart Rate: 68 /min (NORMAL)
+- Respiratory Rate: 14 /min (NORMAL)
+- Oxygen Saturation: 99% (NORMAL)
+- Temperature: 36.7 C (NORMAL)
+
+Laboratory Results (2025-04-20)
+- Creatinine: 0.9 mg/dL (NORMAL)
+- eGFR: 105 mL/min/1.73m2 (NORMAL)
+
+Assessment and Plan
+1. Healthy male — All vitals and labs within normal limits.
+2. Allergic rhinitis — Cetirizine effective and well-tolerated. Continue as needed.
+3. Preventive care — Up to date on age-appropriate screenings.
+4. No medication safety concerns — Single benign medication, no interactions, no contraindications.
+
+NOTE: This is a healthy patient with no clinical safety concerns. All screening tools should return NEGATIVE/CLEAN results.

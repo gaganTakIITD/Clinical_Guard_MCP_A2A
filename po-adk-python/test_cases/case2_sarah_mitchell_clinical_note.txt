@@ -1,0 +1,33 @@
+Chief Complaint
+Follow-up for depression management and migraine.
+
+History of Present Illness
+Sarah Mitchell is a 28-year-old female presenting for follow-up on her depressive disorder and migraine management. She reports that her current antidepressant (sertraline) has been effective for mood, but she continues to experience 2-3 migraines per month requiring acute treatment. She was recently prescribed tramadol by an urgent care provider for back pain following a minor car accident. She also uses sumatriptan as needed for migraines.
+
+Past Medical History
+- Depressive disorder (diagnosed 2020)
+- Migraine without aura (diagnosed 2019)
+
+Current Medications
+1. Sertraline 100 MG Oral Tablet — Once daily (SSRI antidepressant)
+2. Tramadol 50 MG Oral Tablet — As needed for pain (opioid analgesic, prescribed by urgent care)
+3. Sumatriptan 50 MG Oral Tablet — As needed for migraine (triptan)
+
+SAFETY CONCERN: All three medications are serotonergic. The combination of an SSRI (sertraline) + opioid with serotonergic activity (tramadol) + triptan (sumatriptan) places the patient at significant risk for SEROTONIN SYNDROME (Hunter Criteria).
+
+Allergies
+No known allergies.
+
+Social History
+Non-smoker. Occasional social alcohol (1-2 drinks/week). Works as a software engineer. No recreational drug use.
+
+Vital Signs (2025-04-20)
+- Blood Pressure: 118/74 mmHg
+- Heart Rate: 72 /min
+- Temperature: 36.6 C
+
+Assessment and Plan
+1. Depression — Stable on sertraline 100mg. Continue current dose.
+2. Migraine — Sumatriptan PRN effective. However, concurrent use with sertraline increases serotonin syndrome risk. Consider non-serotonergic alternative (e.g., ubrogepant, rimegepant).
+3. Pain management — Tramadol prescribed by outside provider. CRITICAL: Tramadol has serotonergic properties and combined with sertraline creates HIGH risk of serotonin syndrome. Recommend switching to non-serotonergic analgesic (acetaminophen, NSAIDs, or non-tramadol opioid if needed).
+4. Patient education — Counsel on symptoms of serotonin syndrome: agitation, confusion, rapid heart rate, high blood pressure, dilated pupils, muscle twitching, diarrhea. Seek immediate medical attention if symptoms occur.

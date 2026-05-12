@@ -1,0 +1,52 @@
+Chief Complaint
+Routine medication review. Family reports increased confusion and two falls in the past month.
+
+History of Present Illness
+Dorothy Williams is an 82-year-old female presenting for medication review. Her daughter reports that Mrs. Williams has fallen twice in the past month — once in the bathroom and once while getting out of bed at night. She has also been more confused and drowsy during the day. She is currently taking 10 medications prescribed by multiple providers. Her daughter is concerned about the number of medications and whether some may be contributing to the falls.
+
+Past Medical History
+- Hypertensive disorder (diagnosed 2005)
+- Chronic low back pain (diagnosed 2010)
+- Depressive disorder (diagnosed 2015)
+- Osteoporosis (diagnosed 2018)
+
+Current Medications
+1. Lisinopril 10 MG Oral Tablet — Once daily (ACE inhibitor, hypertension)
+2. Amoxicillin 250 MG Oral Tablet — Three times daily (dental infection)
+3. Amlodipine 5 MG Oral Tablet — Once daily (calcium channel blocker, hypertension)
+4. Simvastatin 20 MG Oral Tablet — Once daily at bedtime (statin, cholesterol)
+5. Atorvastatin 40 MG Oral Tablet — Once daily (statin, cholesterol) — DUPLICATE WITH SIMVASTATIN
+6. Diazepam 5 MG Oral Tablet — Twice daily for anxiety (benzodiazepine) — BEERS CRITERIA FLAG
+7. Lorazepam 1 MG Oral Tablet — At bedtime for insomnia (benzodiazepine) — BEERS CRITERIA FLAG, DUPLICATE WITH DIAZEPAM
+8. Amitriptyline 25 MG Oral Tablet — At bedtime (tricyclic antidepressant) — BEERS CRITERIA FLAG (anticholinergic)
+9. Ranitidine 150 MG Oral Tablet — Twice daily (H2 blocker, GERD)
+10. Oxycodone 5 MG Oral Tablet — Every 6 hours as needed for back pain (opioid)
+
+SAFETY CONCERNS:
+- HIGH POLYPHARMACY: 10 active medications from multiple prescribers
+- FDA BLACK BOX WARNING: Oxycodone + Diazepam + Lorazepam (opioid + benzodiazepine) — risk of respiratory depression and death
+- DUPLICATE THERAPY: Two statins (simvastatin + atorvastatin) — increased rhabdomyolysis risk
+- DUPLICATE THERAPY: Two benzodiazepines (diazepam + lorazepam) — excessive sedation
+- THREE BEERS CRITERIA VIOLATIONS: Diazepam, Lorazepam, Amitriptyline in an 82-year-old
+- EXTREME FALL RISK: Age 82 + 2 benzodiazepines + opioid + anticholinergic (amitriptyline)
+
+Allergies
+- PENICILLIN — confirmed allergy. NOTE: Amoxicillin is a penicillin-class antibiotic. CONTRAINDICATED.
+
+Social History
+Widow. Lives with daughter. Former teacher. No alcohol or tobacco use.
+
+Vital Signs (2025-04-20)
+- Blood Pressure: 142/86 mmHg
+- Heart Rate: 76 /min
+- Temperature: 36.5 C
+
+Assessment and Plan
+1. Polypharmacy — 10 medications is excessive. Comprehensive deprescribing review urgently needed.
+2. Falls — Likely medication-related. Two benzodiazepines + opioid + anticholinergic TCA = severe fall risk.
+3. Duplicate statins — Discontinue one (recommend stopping simvastatin, continuing atorvastatin).
+4. Duplicate benzodiazepines — Taper and discontinue at least one. Both are Beers flagged in elderly.
+5. Opioid + benzo combination — FDA black box warning. Taper one or both.
+6. Amitriptyline — Beers Criteria violation (strong anticholinergic). Switch to safer antidepressant (sertraline, mirtazapine).
+7. Drug-allergy conflict — Amoxicillin prescribed despite penicillin allergy. IMMEDIATE DISCONTINUATION REQUIRED.
+8. Hypertension — BP 142/86, borderline. May improve with deprescribing (removing excessive sedation).

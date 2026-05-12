@@ -1,0 +1,48 @@
+Chief Complaint
+Routine follow-up and medication review.
+
+History of Present Illness
+Robert Chen is a 76-year-old male presenting for routine follow-up. He has a complex medical history including Type 2 diabetes mellitus, heart failure (NYHA Class II), hypertensive disorder, and chronic kidney disease stage 3. Patient reports mild fatigue and occasional lower extremity edema. He is currently on 7 medications and reports compliance with all prescribed regimens.
+
+Past Medical History
+- Type 2 diabetes mellitus (diagnosed 2015)
+- Heart failure, NYHA Class II (diagnosed 2020)
+- Hypertensive disorder (diagnosed 2010)
+- Chronic kidney disease, Stage 3 (diagnosed 2022)
+
+Current Medications
+1. Lisinopril 20 MG Oral Tablet — Once daily (ACE inhibitor, hypertension/HF)
+2. Spironolactone 25 MG Oral Tablet — Once daily (MRA, heart failure)
+3. Warfarin 5 MG Oral Tablet — Once daily (anticoagulant)
+4. Aspirin 81 MG Oral Tablet — Once daily (antiplatelet)
+5. Metformin 1000 MG Oral Tablet — Twice daily (diabetes)
+6. Diazepam 5 MG Oral Tablet — As needed for anxiety
+7. Amoxicillin 500 MG Oral Tablet — Three times daily x 10 days (recent URI)
+
+Allergies
+- PENICILLIN — confirmed allergy (anaphylaxis risk)
+
+Social History
+Former smoker (quit 2005). No alcohol use. Lives independently.
+
+Vital Signs (2025-04-20)
+- Blood Pressure: 154/92 mmHg
+- Heart Rate: 88 /min
+- Respiratory Rate: 18 /min
+- Oxygen Saturation: 95%
+- Temperature: 36.8 C
+
+Laboratory Results (2025-04-20)
+- Creatinine: 1.9 mg/dL (HIGH)
+- eGFR: 32 mL/min/1.73m2 (SEVERELY DECREASED — CKD Stage 3b)
+- Hemoglobin A1c: 8.4% (UNCONTROLLED — target <7%)
+- Potassium: 5.3 mmol/L (HIGH — monitor for hyperkalemia with ACEi + MRA)
+
+Assessment and Plan
+1. Diabetes — HbA1c 8.4% above target. Review metformin dosing given declining renal function.
+2. Heart failure — Currently on ACEi + MRA. Missing beta-blocker and SGLT2i per ACC/AHA GDMT.
+3. CKD Stage 3b — eGFR 32, declining. Metformin may need dose reduction or discontinuation.
+4. Hypertension — BP 154/92, above 130/80 target. Consider titrating antihypertensives.
+5. Anticoagulation — Warfarin + Aspirin concurrent use increases bleeding risk. Review necessity.
+6. Anxiety — Diazepam in a 76-year-old is a Beers Criteria concern (fall/sedation risk).
+7. Infection — Amoxicillin prescribed despite documented penicillin allergy. CRITICAL SAFETY CONCERN.
