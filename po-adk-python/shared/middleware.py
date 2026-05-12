@@ -170,7 +170,11 @@ class ApiKeyMiddleware(BaseHTTPMiddleware):
 
         # Agent-card endpoint is intentionally public — it tells callers that
         # an API key IS required before they start authenticating.
-        if request.url.path == "/.well-known/agent-card.json":
+        # Support both A2A SDK path variants used by different PO versions.
+        if request.url.path in (
+            "/.well-known/agent-card.json",
+            "/.well-known/agent.json",
+        ):
             return await call_next(request)
 
         api_key = request.headers.get("X-API-Key")
