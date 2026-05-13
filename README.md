@@ -199,7 +199,6 @@ po-adk-python/
 │   ├── middleware.py          # A2A protocol middleware
 │   ├── logging_utils.py      # Structured logging
 │   └── app_factory.py        # App initialization
-├── demo_patient_bundle.json   # Synthetic patient for testing
 ├── requirements.txt
 ├── Dockerfile
 ├── docker-compose.yml

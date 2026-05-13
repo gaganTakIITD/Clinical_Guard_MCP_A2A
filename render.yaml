@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: clinicalguard-agent
+    env: docker
+    dockerContext: po-adk-python
+    dockerfilePath: po-adk-python/Dockerfile
+    envVars:
+      - key: PORT
+        value: "8080"
+      - key: AGENT_MODULE
+        value: "healthcare_agent.app:a2a_app"
+      - key: GOOGLE_GENAI_USE_VERTEXAI
+        value: "FALSE"
+      - key: HEALTHCARE_AGENT_MODEL
+        value: "gemini/gemini-2.5-flash"
+      - key: VERIFIER_MODEL
+        value: "gemini/gemini-2.5-flash-lite"
+      - key: GOOGLE_API_KEY
+        sync: false
