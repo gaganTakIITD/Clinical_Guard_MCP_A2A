@@ -14,7 +14,7 @@
 
 ## ⚠️ JUDGES: How to Test ClinicalGuard ⚠️
 
-**[🎥 Watch this 60-second video on exactly how to test the agent](YOUR_YOUTUBE_LINK_HERE)**
+**[🎥 Watch this 60-second video on exactly how to test the agent](https://www.youtube.com/watch?v=jWFwxVi0Kko)**
 
 If the "Try it out" link on Devpost sent you to a private workspace, please follow these steps to test the live agent:
 1. **Load the Patient Data:** First, download the `po-adk-python/test_cases/case4_james_park_healthy_adult.json` file from this repository.
