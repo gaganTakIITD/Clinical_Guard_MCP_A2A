@@ -17,11 +17,12 @@
 **[🎥 Watch this 60-second video on exactly how to test the agent](YOUR_YOUTUBE_LINK_HERE)**
 
 If the "Try it out" link on Devpost sent you to a private workspace, please follow these steps to test the live agent:
-1. Log into the **Prompt Opinion Platform**.
-2. Navigate to the **Marketplace** on the left sidebar.
-3. Search for **"clinicalguard"**.
-4. Look for the agent named **`agent_deployed_on_render`** published by **Gagan Tak** and click **Add**.
-5. Open your Launchpad and test it with this prompt: 
+1. **Load the Patient Data:** First, download the `po-adk-python/test_cases/case4_james_park_healthy_adult.json` file from this repository.
+2. In the **Prompt Opinion Platform**, look at the left sidebar, click **Patient Data -> Import**, and upload that JSON file to load James Park's FHIR records.
+3. Navigate to the **Marketplace** on the left sidebar.
+4. Search for **"clinicalguard"**.
+5. Look for the agent named **`agent_deployed_on_render`** published by **Gagan Tak** and click **Add**.
+6. Open your Launchpad and test it with this prompt: 
    > *"Please run a complete clinical safety test for James Park (ID: a46eff17-dde1-42c3-8a5a-67a2d71a6412)."*
 
 *(Note: The Prompt Opinion platform should automatically handle authentication. However, if you are ever prompted for an API Key to connect to this agent, use: **`clinicalguard-hackathon-2025`**)*
