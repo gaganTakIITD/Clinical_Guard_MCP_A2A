@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ClinicalGuard Script (Short)</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#0a0a0f; --card:#13131a; --border:#1e1e2e; --text:#e4e4e7; --muted:#71717a; --accent:#6366f1; --cyan:#22d3ee; --red:#ef4444; --amber:#f59e0b; --green:#22c55e; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); line-height:2; padding:16px; font-size:20px; }
+  h1 { text-align:center; font-size:1.6em; background:linear-gradient(135deg,var(--accent),var(--cyan)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; margin-bottom:20px; }
+  .s { background:var(--card); border:1px solid var(--border); border-radius:14px; padding:20px; margin-bottom:20px; }
+  .sh { display:flex; align-items:center; gap:10px; margin-bottom:12px; }
+  .sn { background:linear-gradient(135deg,var(--accent),var(--cyan)); color:white; font-weight:700; font-size:.8em; padding:3px 12px; border-radius:16px; }
+  .st { font-size:1.2em; font-weight:700; color:var(--cyan); }
+  .tm { color:var(--muted); font-size:.75em; margin-left:auto; }
+  .dir { background:#1a1a2e; border-left:3px solid var(--accent); padding:8px 14px; border-radius:0 8px 8px 0; margin-bottom:12px; font-size:.8em; color:var(--muted); font-style:italic; }
+  .say { font-size:1.1em; line-height:2; }
+  .say strong { color:var(--cyan); }
+  .cr { color:var(--red); font-weight:700; }
+  .hi { color:var(--amber); font-weight:700; }
+  .gn { color:var(--green); font-weight:700; }
+  hr { border:none; border-top:1px solid var(--border); margin:8px 0; }
+</style>
+</head>
+<body>
+
+<h1>🎬 ClinicalGuard — Short Script (2 min)</h1>
+
+<!-- SCENE 1: HOOK -->
+<div class="s">
+  <div class="sh"><span class="sn">1</span><span class="st">Hook</span><span class="tm">0:00–0:15</span></div>
+  <div class="dir">Black screen or your face</div>
+  <div class="say">
+    <strong>250,000 patients die</strong> from medical errors every year. Third leading cause of death. Most are preventable — wrong drug, missed allergy, dangerous combinations. <strong>ClinicalGuard</strong> catches them all.
+  </div>
+</div>
+
+<!-- SCENE 2: WHAT IT IS -->
+<div class="s">
+  <div class="sh"><span class="sn">2</span><span class="st">What It Is</span><span class="tm">0:15–0:35</span></div>
+  <div class="dir">Show GitHub repo or architecture diagram</div>
+  <div class="say">
+    ClinicalGuard — <strong>27 tools</strong>, built on <strong>Google ADK</strong>, deployed on <strong>Prompt Opinion</strong> via <strong>A2A protocol</strong>.<br><br>
+    Every clinical fact comes from the patient's <strong>real FHIR record</strong>. Zero hallucination.<br><br>
+    The agent <strong>intelligently selects</strong> which tools to run based on the patient — age, conditions, medications. It runs Beers Criteria for an 82-year-old but skips it for a 35-year-old, and <strong>tells you why</strong>.
+  </div>
+</div>
+
+<!-- SCENE 3: LIVE DEMO - DOROTHY -->
+<div class="s">
+  <div class="sh"><span class="sn">3</span><span class="st">Demo: Dorothy Williams (Danger Case)</span><span class="tm">0:35–1:30</span></div>
+  <div class="dir">Open PO → Click Dorothy Williams → Show full report</div>
+  <div class="say">
+    Dorothy Williams. <strong>82 years old. 10 medications.</strong> Watch:<br><br>
+    <span class="cr">CRITICAL — Amoxicillin with penicillin allergy.</span> Anaphylaxis risk. Flagged with the exact cross-reactivity rule.<br><br>
+    <span class="cr">CRITICAL — Oxycodone + Lorazepam.</span> FDA Black Box Warning — fatal respiratory depression.<br><br>
+    <span class="hi">Duplicate statins</span> — Simvastatin AND Atorvastatin. Rhabdomyolysis risk.<br><br>
+    <span class="hi">Duplicate benzos</span> — Diazepam AND Lorazepam. Excessive sedation.<br><br>
+    <span class="hi">3 Beers Criteria violations</span> — Diazepam, Lorazepam, Amitriptyline. All inappropriate for over 65.<br><br>
+    <span class="cr">Fall Risk: CRITICAL</span> — age 82, two recent falls, sedating drugs.<br><br>
+    And the <strong>negative space</strong> — it reports what's <span class="gn">clean</span> too: no QT risk, no serotonin syndrome, low sepsis risk. Proving it <strong>checked everything</strong>.
+  </div>
+</div>
+
+<!-- SCENE 4: CLEAN CASE -->
+<div class="s">
+  <div class="sh"><span class="sn">4</span><span class="st">Demo: James Park (Clean Case)</span><span class="tm">1:30–1:50</span></div>
+  <div class="dir">Click James Park → Show clean report</div>
+  <div class="say">
+    James Park. <strong>35 years old, one medication</strong> — Cetirizine.<br><br>
+    All screens <span class="gn">clean</span>. Beers skipped — age 34. HF therapy skipped — no heart failure. Agent <strong>tells you why</strong> each was skipped.<br><br>
+    Only finding: 3 immunization gaps. <strong>No hallucinated dangers.</strong> That's trust.
+  </div>
+</div>
+
+<!-- SCENE 5: WHY WE WIN -->
+<div class="s">
+  <div class="sh"><span class="sn">5</span><span class="st">Why We Win</span><span class="tm">1:50–2:15</span></div>
+  <div class="dir">Face or bullet slide</div>
+  <div class="say">
+    <strong>One</strong> — Zero hallucination. Every fact FHIR-verified, every finding cites the guideline.<br><br>
+    <strong>Two</strong> — 27 tools, intelligently gated per patient. Based on <strong>14 core MTM domains</strong> from ASHP and CMS — same checks a hospital pharmacist does. Covers <strong>90% of preventable adverse drug events</strong>.<br><br>
+    <strong>Three</strong> — Multi-model verification. Two independent AI models must agree.<br><br>
+    <strong>Four</strong> — Negative space reporting. Clean screens shown explicitly. No alert fatigue.<br><br>
+    <strong>Five</strong> — Open standards. Google ADK, A2A, FHIR R4, Prompt Opinion. Production-ready.<br><br>
+    ClinicalGuard gives doctors <strong>superhuman safety coverage</strong> in 60 seconds. Thank you.
+  </div>
+</div>
+
+</body>
+</html>

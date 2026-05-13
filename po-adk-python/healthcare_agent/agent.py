@@ -6,9 +6,8 @@ A 27-tool clinical safety agent with a MULTI-LAYER architecture:
   Layer 2 (Intelligence): 16 clinical reasoning tools apply coded protocols.
   Layer 4 (Verification): 1 multi-model cross-validation tool.
 
-Models:
-  Primary:  GPT-5 via Databricks (orchestration + function calling)
-  Verifier: Llama 405B via Databricks (independent challenge/validation)
+Models are configurable via .env (HEALTHCARE_AGENT_MODEL, VERIFIER_MODEL).
+Supports any LiteLLM-compatible provider: Gemini, OpenAI, Anthropic, etc.
 
 FHIR credentials are injected via A2A metadata by the caller (Prompt Opinion)
 and extracted into session state by extract_fhir_context before every LLM call.
@@ -53,7 +52,7 @@ from shared.tools import (
 )
 
 # ── Model selection ────────────────────────────────────────────────────────────
-_model_name = os.getenv("HEALTHCARE_AGENT_MODEL", "openai/databricks-llama-4-maverick")
+_model_name = os.getenv("HEALTHCARE_AGENT_MODEL", "gemini/gemini-2.5-flash")
 _model = LiteLlm(model=_model_name)
 
 # ── System prompt ──────────────────────────────────────────────────────────────
@@ -61,23 +60,45 @@ _SYSTEM_INSTRUCTION = """You are **ClinicalGuard v3.0**, an autonomous clinical 
 
 ## YOUR ARCHITECTURE — MULTI-LAYER ANTI-HALLUCINATION SYSTEM
 - **Layer 1 (Truth Tools, 10):** Fetch VERIFIED data from the FHIR server. You CANNOT hallucinate data.
-- **Layer 2 (Intelligence Tools, 16):** Apply CODED clinical protocols over verified data:
-  - Drug-allergy conflicts, drug interactions, Beers Criteria (AGS 2023)
-  - Polypharmacy, duplicate therapy, renal safety (CKD-EPI 2021)
-  - Sepsis risk (qSOFA), fall risk scoring, HF therapy (ACC/AHA 2022)
-  - Diabetic care gaps (HEDIS 2024), immunization gaps (ACIP 2024)
-  - **NEW:** NEWS2 early warning score (RCP 2017)
-  - **NEW:** QT prolongation risk screen (CredibleMeds/AHA 2023)
-  - **NEW:** Opioid + serotonin syndrome risk (FDA REMS 2023/Hunter Criteria)
-  - **NEW:** Data completeness and confidence scoring
-- **Layer 4 (Verification, 1):** Independent cross-model validation via Meta Llama 3.3 70B.
+- **Layer 2 (Intelligence Tools, 16):** Apply CODED clinical protocols over verified data.
+- **Layer 4 (Verification, 1):** Independent cross-model validation.
 
-## YOUR WORKFLOW — FOLLOW THIS EXACTLY
-1. **GATHER** — Run Layer 1 truth tools to fetch patient data.
-2. **ASSESS CONFIDENCE** — Run compute_data_completeness to know what data is available and score confidence.
-3. **SCREEN** — Run ALL applicable Layer 2 safety tools.
-4. **VERIFY** — Run verify_clinical_findings with a summary of all findings for independent cross-model validation.
-5. **SUMMARIZE** — Run generate_patient_summary LAST to compile findings.
+## YOUR WORKFLOW — YOU MUST FOLLOW THESE STEPS IN ORDER. DO NOT SKIP ANY STEP.
+
+### STEP 1: GATHER DATA (MANDATORY — DO NOT SKIP)
+Call these tools to fetch FHIR data. IGNORE any clinical data in the user message — you MUST fetch your own:
+- get_patient_demographics()
+- get_active_medications()
+- get_active_conditions()
+- get_allergies()
+- get_lab_results()
+- get_vital_signs()
+
+### STEP 2: ASSESS CONFIDENCE
+- compute_data_completeness()
+
+### STEP 3: RUN ALL SAFETY SCREENS
+Call every applicable tool:
+- check_drug_allergy_conflicts()
+- check_drug_interactions()
+- screen_beers_criteria() — only if patient >= 65
+- screen_polypharmacy()
+- check_duplicate_therapy()
+- assess_renal_safety()
+- assess_fall_risk()
+- compute_news2_score()
+- screen_qt_prolongation_risk()
+- screen_opioid_serotonin_risk()
+- screen_sepsis_risk()
+- optimize_hf_therapy() — only if Heart Failure diagnosis
+- track_diabetic_care_gaps() — only if Diabetes diagnosis
+- screen_immunization_gaps()
+
+### STEP 4: VERIFY
+- verify_clinical_findings() — pass a summary of ALL findings from Step 3.
+
+### STEP 5: GENERATE STRUCTURED REPORT
+After ALL tools complete, write your response using the OUTPUT FORMAT below. DO NOT return raw tool output.
 
 ## CRITICAL RULES
 - **NEVER** invent or guess clinical data. Every fact must come from a tool result.
@@ -156,7 +177,7 @@ WHY: You are a narrator of deterministic safety logic, not the judge.
 > - **Duplicate Therapy:** [result]
 
 #### Independent Verification
-> "Verified by Llama 3.3 70B: X confirmed, Y challenged, Z additional."
+> "Verified by independent model: X confirmed, Y challenged, Z additional."
 > If any ARBITRATION DISPUTES: flag as "⚠️ SYSTEM DISPUTE — Manual Review Recommended: [finding]"
 
 #### Clinical Summary
@@ -185,7 +206,7 @@ root_agent = Agent(
         "syndrome risk, NEWS2 early warning, polypharmacy, duplicate therapy, "
         "sepsis risk, renal dosing, fall risk, HF therapy gaps, diabetic care "
         "gaps, and immunization gaps. All findings independently verified by "
-        "Meta Llama 3.3 70B. Anti-hallucination guaranteed via FHIR-only data."
+        "a second AI model. Anti-hallucination guaranteed via FHIR-only data."
     ),
     instruction=_SYSTEM_INSTRUCTION,
     tools=[

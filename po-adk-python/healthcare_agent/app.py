@@ -19,7 +19,7 @@ a2a_app = create_a2a_app(
         "independent model verification. 10 FHIR truth tools, 16 intelligence "
         "tools (Beers, drug interactions, qSOFA, CKD-EPI, GDMT, HEDIS, NEWS2, "
         "QT prolongation, opioid/serotonin safety), and 1 multi-model verification "
-        "tool. Primary: Llama 4 Maverick. Verifier: Llama 3.3 70B. All via Databricks."
+        "tool. Model-agnostic via LiteLLM (supports Gemini, OpenAI, Anthropic, etc.)."
     ),
     url=os.getenv("HEALTHCARE_AGENT_URL", os.getenv("BASE_URL", "http://localhost:8001")),
     port=8001,
@@ -131,7 +131,7 @@ a2a_app = create_a2a_app(
         AgentSkill(
             id="multi-model-verification",
             name="Multi-Model Verification",
-            description="Independent cross-validation of clinical findings by Meta Llama 3.3 70B via Databricks. Verifies, challenges, and supplements primary analysis findings.",
+            description="Independent cross-validation of clinical findings by a separate AI model. Verifies, challenges, and supplements primary analysis findings.",
             tags=["verification", "safety", "multi-model"],
         ),
     ],

@@ -55,14 +55,14 @@ ClinicalGuard is a **27-tool autonomous clinical safety agent** that screens pat
 │                              ↓                                      │
 │  Layer 3: ORCHESTRATION                                             │
 │  ┌─────────────────────────────────────────────────────────────┐    │
-│  │  Llama 4 Maverick (via Databricks AI Gateway)               │    │
+│  │  Primary LLM (configurable via LiteLLM)                     │    │
 │  │  • Negative space reporting (clean results stated)          │    │
 │  │  • Semantic justification (exact rules quoted)              │    │
 │  └─────────────────────────────────────────────────────────────┘    │
 │                              ↓                                      │
 │  Layer 4: INDEPENDENT VERIFICATION + ARBITRATION                    │
 │  ┌─────────────────────────────────────────────────────────────┐    │
-│  │  Llama 3.3 70B (via Databricks AI Gateway)                  │    │
+│  │  Verifier LLM (independent model via LiteLLM)              │    │
 │  │  Verified │ Challenged │ Missed                              │    │
 │  │  If challenged → Arbitration Loop:                           │    │
 │  │    Primary ACCEPTS (corrects) or REJECTS (cites guideline)  │    │
@@ -118,7 +118,7 @@ ClinicalGuard is a **27-tool autonomous clinical safety agent** that screens pat
 
 ### Prerequisites
 - Python 3.11+
-- Databricks account (free tier works)
+- Google API key (for Gemini) or any LiteLLM-supported provider
 
 ### Setup
 
@@ -132,7 +132,7 @@ pip install -r requirements.txt
 
 # Configure environment
 cp .env.example .env
-# Edit .env with your Databricks token
+# Edit .env with your API keys (see .env.example)
 ```
 
 ### Run
@@ -149,10 +149,9 @@ ngrok http 8001
 
 | Variable | Description |
 |----------|-------------|
-| `DATABRICKS_API_KEY` | Databricks personal access token |
-| `DATABRICKS_API_BASE` | AI Gateway endpoint URL |
-| `HEALTHCARE_AGENT_MODEL` | Primary model (default: `openai/databricks-llama-4-maverick`) |
-| `VERIFIER_MODEL` | Verification model (default: `databricks-meta-llama-3-3-70b-instruct`) |
+| `GOOGLE_API_KEY` | Google API key (for Gemini models) |
+| `HEALTHCARE_AGENT_MODEL` | Primary model (default: `gemini/gemini-2.5-flash`) |
+| `VERIFIER_MODEL` | Verification model (default: `gemini/gemini-2.5-flash-lite`) |
 
 ---
 
@@ -165,13 +164,13 @@ When a patient request arrives, **all 10 FHIR resources are fetched concurrently
 16 clinical protocols run as **pure Python** — no LLM involvement. Every drug interaction, every Beers flag, every eGFR calculation is a hardcoded lookup table. This is the anti-hallucination core.
 
 ### 3. Intelligent Orchestration (Layer 3)
-Llama 4 Maverick synthesizes findings with:
+The primary LLM synthesizes findings with:
 - **Negative space reporting** — explicitly states clean results ("No renal adjustments needed for eGFR 65")
 - **Semantic justification** — quotes the exact deterministic rule, not its own interpretation
 - **Tool gating** — skips irrelevant screens (no Beers Criteria for a 25-year-old)
 
 ### 4. Cross-Model Verification (Layer 4)
-Llama 3.3 70B independently reviews all findings:
+An independent verifier model reviews all findings:
 - **Verified** — confirms the finding
 - **Challenged** — disputes it → triggers Arbitration Loop
 - **Missed** — identifies additional concerns
@@ -215,8 +214,8 @@ po-adk-python/
 |-----------|-----------|
 | **Agent Framework** | Google ADK (Agent Development Kit) |
 | **Protocol** | A2A (Agent-to-Agent) |
-| **Primary Model** | Meta Llama 4 Maverick (via Databricks AI Gateway) |
-| **Verification Model** | Meta Llama 3.3 70B Instruct (via Databricks AI Gateway) |
+| **Primary Model** | Gemini 2.5 Flash (configurable via LiteLLM) |
+| **Verification Model** | Gemini 2.5 Flash Lite (configurable via LiteLLM) |
 | **LLM Router** | LiteLLM |
 | **Health Data** | HL7 FHIR R4 |
 | **Platform** | Prompt Opinion |
