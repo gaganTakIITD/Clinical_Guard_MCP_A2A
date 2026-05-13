@@ -24,6 +24,8 @@ If the "Try it out" link on Devpost sent you to a private workspace, please foll
 5. Open your Launchpad and test it with this prompt: 
    > *"Please run a complete clinical safety test for James Park (ID: a46eff17-dde1-42c3-8a5a-67a2d71a6412)."*
 
+*(Note: The Prompt Opinion platform should automatically handle authentication. However, if you are ever prompted for an API Key to connect to this agent, use: **`clinicalguard-hackathon-2025`**)*
+
 ---
 ## What is ClinicalGuard?
 
