@@ -16,8 +16,9 @@
 If the "Try it out" link on Devpost sent you to a private workspace, please follow these steps to test the live agent:
 1. Log into the **Prompt Opinion Platform**.
 2. Navigate to the **Marketplace** on the left sidebar.
-3. Search for **"ClinicalGuard"** and click **Add to Workspace**.
-4. Open your Launchpad and test it with this prompt: 
+3. Search for **"clinicalguard"**.
+4. Look for the agent named **`agent_deployed_on_render`** published by **Gagan Tak** and click **Add**.
+5. Open your Launchpad and test it with this prompt: 
    > *"Please run a complete clinical safety test for James Park (ID: a46eff17-dde1-42c3-8a5a-67a2d71a6412)."*
 
 ---
