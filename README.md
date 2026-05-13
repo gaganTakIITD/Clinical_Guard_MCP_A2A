@@ -13,6 +13,9 @@
 </p>
 
 ## ⚠️ JUDGES: How to Test ClinicalGuard ⚠️
+
+**[🎥 Watch this 60-second video on exactly how to test the agent](YOUR_YOUTUBE_LINK_HERE)**
+
 If the "Try it out" link on Devpost sent you to a private workspace, please follow these steps to test the live agent:
 1. Log into the **Prompt Opinion Platform**.
 2. Navigate to the **Marketplace** on the left sidebar.
