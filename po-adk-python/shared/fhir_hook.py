@@ -186,7 +186,24 @@ def extract_fhir_context(callback_context, llm_request):
     if fhir_data:
         callback_context.state["fhir_url"]   = fhir_data.get("fhirUrl",   "")
         callback_context.state["fhir_token"] = fhir_data.get("fhirToken", "")
-        callback_context.state["patient_id"] = fhir_data.get("patientId", "")
+        
+        patient_id = fhir_data.get("patientId", "")
+        if not patient_id:
+            try:
+                llm_payload = serialize_for_log(llm_request)
+                contents = llm_payload.get("contents", [])
+                if contents:
+                    parts = contents[-1].get("parts", [])
+                    if parts and "text" in parts[0]:
+                        import re
+                        text = parts[0]["text"]
+                        match = re.search(r"\(ID:\s*([a-zA-Z0-9\-]+)\)", text)
+                        if match:
+                            patient_id = match.group(1)
+            except Exception:
+                pass
+                
+        callback_context.state["patient_id"] = patient_id
         logger.info("FHIR_URL_FOUND value=%s",         callback_context.state["fhir_url"]   or "[EMPTY]")
         logger.info("FHIR_TOKEN_FOUND fingerprint=%s", token_fingerprint(callback_context.state["fhir_token"]))
         logger.info("FHIR_PATIENT_FOUND value=%s",     callback_context.state["patient_id"] or "[EMPTY]")
