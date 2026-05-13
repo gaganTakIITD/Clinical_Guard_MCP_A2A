@@ -12,8 +12,15 @@
   </p>
 </p>
 
+## ⚠️ JUDGES: How to Test ClinicalGuard ⚠️
+If the "Try it out" link on Devpost sent you to a private workspace, please follow these steps to test the live agent:
+1. Log into the **Prompt Opinion Platform**.
+2. Navigate to the **Marketplace** on the left sidebar.
+3. Search for **"ClinicalGuard"** and click **Add to Workspace**.
+4. Open your Launchpad and test it with this prompt: 
+   > *"Please run a complete clinical safety test for James Park (ID: a46eff17-dde1-42c3-8a5a-67a2d71a6412)."*
 
-
+---
 ## What is ClinicalGuard?
 
 ClinicalGuard is a **27-tool autonomous clinical safety agent** that screens patients for medication risks, care gaps, and clinical deterioration by analyzing their FHIR health records. It uses a **4-layer anti-hallucination architecture** where clinical facts are fetched from verified FHIR servers, safety findings are computed by deterministic Python rules (not LLMs), and all conclusions are independently verified by a second AI model.
