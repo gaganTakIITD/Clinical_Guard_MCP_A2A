@@ -1,5 +1,5 @@
 <p align="center">
-  <h1 align="center">🛡️ ClinicalGuard v3.0</h1>
+  <h1 align="center"> ClinicalGuard v3.0</h1>
   <p align="center">
     <strong>Multi-Layer Clinical Safety Agent with Cross-Model Verification</strong>
   </p>
@@ -12,7 +12,7 @@
   </p>
 </p>
 
-## ⚠️ JUDGES: How to Test ClinicalGuard ⚠️
+##  JUDGES: How to Test ClinicalGuard 
 
 **[ Watch this video on exactly how to test the agent](https://www.youtube.com/watch?v=jWFwxVi0Kko)**
 
